@@ -60,7 +60,7 @@ var Notify = {
     // On envoie l'objet à la fonction suivante
     return obj;
   },
-  alert: function(info, message, time, callback) {
+  alert: function(info, message, callback, time) {
     // On définit le temps
     time = time ? time : 5000;
     // On récupère l'objet avec l'alerte créé et le container
@@ -91,10 +91,10 @@ var Notify = {
   checkAlerts: function() {
     if ($('#notify .notify').length == 0) $('#notify').remove();
   },
-  success: function(message, time, callback) {
-    Notify.alert('success', message, time, callback);
+  success: function(message, callback, time) {
+    Notify.alert('success', message, callback, time);
   },
-  fail: function(message, time, callback) {
-    Notify.alert('fail', message, time, callback);
+  fail: function(message, callback, time) {
+    Notify.alert('fail', message, callback, time);
   }
 };
