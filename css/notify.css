@@ -41,30 +41,36 @@
 	font-size: 40px;
 	opacity: 0.3;
 	margin: 0 12px;
+	height: 56px;
+	line-height: 56px;
 }
 #notify .notify > span.notify-message {
-	display: inline-block;
-	font-size: 1em;
-	color: #FFF;
+	display: block;
 	position: relative;
+	float: left;
+	font-size: 1em;
+	color: #FFFFFF;
 	width: 72%;
 	height: 56px;
+	line-height: 16px;
+	padding-top: 12px;
 }
 #notify .notify > span.notify-cross {
-	display: inline-block;
+	display: block;
 	position: relative;
-	width: 15px;
-	height: 15px;
+	float: left;
+	width: 30px;
+	height: 56px;
+	line-height: 56px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 13px;
 	font-size: 0.8em;
 	cursor: pointer;
 }
 #notify .notify > span.notify-cross:hover {
-	background-color: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.2);
 }
 #notify .notify.success,
 #notify .notify.calcul {

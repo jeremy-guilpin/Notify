@@ -68,25 +68,25 @@ var Notify = {
     // On montre le container
     $(obj.container).show();
     // On affiche l'alerte
-    // $(obj.alert).fadeIn(function() {
-    //   // On enregistre dans l'objet setTime le timer
-    //   Notify.setTime[Notify.count] = setTimeout(function() {
-    //     // Si le timer est fini on le supprime
-    //     if (Notify.setTime[Notify.count]) clearTimeout(Notify.setTime[Notify.count]);
-    //     // Si le timer est fini on cache l'alerte
-    //     $(obj.alert).fadeOut(function() {
-    //       // Quand le fade est fini
-    //       // On supprime l'alerte
-    //       $(obj.alert).remove();
-    //       // On vérifie si il y a encore des alertes sinon on supprime le container
-    //       Notify.checkAlerts();
-    //       // Si il y a une callback on l'execute
-    //       if (callback && typeof(callback) === 'function') callback();
-    //     });
-    //   }, time);
-    //   // On met à jour le compteur
-    //   Notify.count += 1;
-    // });
+    $(obj.alert).fadeIn(function() {
+      // On enregistre dans l'objet setTime le timer
+      Notify.setTime[Notify.count] = setTimeout(function() {
+        // Si le timer est fini on le supprime
+        if (Notify.setTime[Notify.count]) clearTimeout(Notify.setTime[Notify.count]);
+        // Si le timer est fini on cache l'alerte
+        $(obj.alert).fadeOut(function() {
+          // Quand le fade est fini
+          // On supprime l'alerte
+          $(obj.alert).remove();
+          // On vérifie si il y a encore des alertes sinon on supprime le container
+          Notify.checkAlerts();
+          // Si il y a une callback on l'execute
+          if (callback && typeof(callback) === 'function') callback();
+        });
+      }, time);
+      // On met à jour le compteur
+      Notify.count += 1;
+    });
   },
   checkAlerts: function() {
     if ($('#notify .notify').length == 0) $('#notify').remove();
