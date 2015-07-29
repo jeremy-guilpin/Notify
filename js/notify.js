@@ -38,6 +38,7 @@ function fadeIn(el, display, callback) {
 var Notify = {
   setTime: {},
   count: 0,
+  debug: false,
   DOM: function(info, message, callback) {
     // On vérifie que le container soit présent dans le DOM
     var container = document.getElementById('notify');
@@ -74,7 +75,7 @@ var Notify = {
     // On ajoute une croix pour supprimer l'alerte
     var cross = document.createElement('span');
     cross.className = 'notify-cross';
-    cross.innerHTML = 'x';
+    cross.innerHTML = '<i class="fa fa-times-circle"></i>';
     cross.addEventListener('click', function(e) {
       fadeOut(alert, function(el) {
         if (el.getAttribute('data-time')) {
@@ -127,7 +128,7 @@ var Notify = {
       // On enregistre dans l'objet setTime le timer
       if (obj.alert.getAttribute('data-time')) {
         var dataTime = obj.alert.getAttribute('data-time');
-        Notify.setTime[dataTime] = window.setTimeout(execTime, time);
+        if (!Notify.debug) Notify.setTime[dataTime] = window.setTimeout(execTime, time);
       }
     });
     // On met à jour le compteur
