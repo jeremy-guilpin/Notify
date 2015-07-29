@@ -3,6 +3,7 @@
     <title>Exemple Notify</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/notify.css" media="screen" title="notify" charset="utf-8">
+    <!-- Font -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -14,7 +15,8 @@
     <h1>Notify</h1>
 
     <script type="text/javascript">
-      Notify.success('Test Message Flash Success', function() {
+      $(document).ready(function() {
+        Notify.success('Test Message Flash Success');
         Notify.fail('Test Message Flash Fail', function() {
           alert('It\'s Down !');
         });
