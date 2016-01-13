@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/notify.js"></script>
+    <script type="text/javascript" src="js/jquery.notify.js"></script>
   </head>
   <body>
     <h1>Notify</h1>
 
     <script type="text/javascript">
       $(document).ready(function() {
-        Notify.success('Test Message Flash Success');
-        Notify.fail('Test Message Flash Fail', function() {
-          alert('It\'s Down !');
+        Notify.success('Test Message Flash Success', function() {
+          Notify.fail('Test Message Flash Fail', function() {
+            alert('It\'s Down !');
+          });
         });
       });
     </script>
