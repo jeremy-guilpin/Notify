@@ -20,8 +20,8 @@
 #notify .notify {
 	position: relative;
 	width: 350px;
-	height: 56px;
-	line-height: 56px;
+	min-height: 80px;
+	line-height: 16px;
 	margin: 5px 0;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -34,56 +34,73 @@
 	-webkit-text-shadow: none;
 	-moz-text-shadow: none;
 	text-shadow: none;
+	overflow: hidden;
 	z-index: 9999;
 }
 #notify .notify > i {
 	display: block;
-	position: relative;
-	float: left;
+	position: absolute;
+	left: 0;
+	bottom: 0;
 	opacity: 0.3;
-	margin: 0 12px;
-	height: 56px;
-	line-height: 56px;
+	width: 60px;
+	height: 100%;
+	padding: 0 10px;
 }
 #notify .notify > i::before {
+	position: absolute;
+	top: 50%;
 	font-family: "FontAwesome";
 	font-size: 40px;
+	margin-top: -20px;
 }
 #notify .notify > span.notify-message {
 	display: block;
-	position: relative;
-	float: left;
-	font-size: 1em;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	bottom: 0;
+	font-size: 12px;
 	color: #FFFFFF;
-	width: 72%;
-	height: 56px;
+	width: 290px;
+	height: 100%;
 	line-height: 16px;
-	padding-top: 12px;
+	padding: 10px;
 }
 #notify .notify > span.notify-cross {
 	display: block;
-	position: relative;
-	float: left;
-	width: 30px;
-	height: 56px;
-	line-height: 56px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 40px;
+	height: 100%;
 	text-align: center;
-	font-size: 0.8em;
 	cursor: pointer;
 }
-#notify .notify > span.notify-cross:hover {
-	color: rgba(255,255,255,0.2);
+#notify .notify > span.notify-cross::after {
+	content: 'OK';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -7px;
+	font-size: 14px;
+	width: 100%;
+}
+#notify .notify > span.notify-cross:hover,
+#notify .notify > span.notify-cross:active {
+	color: #FFFFFF;
+	background-color: #2ecc71;
 }
 #notify .notify.success,
 #notify .notify.calcul {
-	background-color: #27ae60;
+	background-color: #2cc36b;
 }
 #notify .notify.fail {
 	background-color: #c0392b;
 }
 #notify .notify.fail > i {}
 #notify .notify.fail > span.notify-message {}
-#notify .notify.fail > span.notify-cross {}
+#notify .notify.fail > span.notify-cross:hover,
+#notify .notify.fail > span.notify-cross:active {
+	background-color: #e74c3c;
+}

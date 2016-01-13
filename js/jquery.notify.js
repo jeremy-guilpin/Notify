@@ -5,6 +5,7 @@
 var Notify = {
   setTime: {},
   count: 0,
+  debug: false,
   DOM: function(info, message) {
     // On vérifie que le container soit présent dans le DOM
     var container = document.getElementById('notify');
@@ -41,7 +42,6 @@ var Notify = {
     // On ajoute une croix pour supprimer l'alerte
     var cross = document.createElement('span');
     cross.className = 'notify-cross';
-    cross.innerHTML = 'x';
     $(cross).on('click', function(e) {
       $(alert).fadeOut(function() {
         if (Notify.setTime[Notify.count]) clearTimeout(Notify.setTime[Notify.count]);
@@ -74,15 +74,17 @@ var Notify = {
         // Si le timer est fini on le supprime
         if (Notify.setTime[Notify.count]) clearTimeout(Notify.setTime[Notify.count]);
         // Si le timer est fini on cache l'alerte
-        $(obj.alert).fadeOut(function() {
-          // Quand le fade est fini
-          // On supprime l'alerte
-          $(obj.alert).remove();
-          // On vérifie si il y a encore des alertes sinon on supprime le container
-          Notify.checkAlerts();
-          // Si il y a une callback on l'execute
-          if (callback && typeof(callback) === 'function') callback();
-        });
+        if (!Notify.debug) {
+          $(obj.alert).fadeOut(function() {
+            // Quand le fade est fini
+            // On supprime l'alerte
+            $(obj.alert).remove();
+            // Si il y a une callback on l'execute
+            if (callback && typeof(callback) === 'function') callback();
+            // On vérifie si il y a encore des alertes sinon on supprime le container
+            Notify.checkAlerts();
+          });
+        }
       }, time);
       // On met à jour le compteur
       Notify.count += 1;
