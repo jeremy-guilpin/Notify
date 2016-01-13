@@ -11,8 +11,8 @@
 }
 #notify {
 	position: fixed;
-	top: 5px;
-	right: 5px;
+	top: 15px;
+	right: 15px;
 	width: 350px;
 	height: auto;
 	z-index: 9999;
@@ -20,9 +20,15 @@
 #notify .notify {
 	position: relative;
 	width: 350px;
+<<<<<<< HEAD
 	min-height: 80px;
 	line-height: 16px;
 	margin: 5px 0;
+=======
+	height: 56px;
+	line-height: 56px;
+	margin: 0 0 15px 0;
+>>>>>>> origin/master
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -34,7 +40,13 @@
 	-webkit-text-shadow: none;
 	-moz-text-shadow: none;
 	text-shadow: none;
+<<<<<<< HEAD
 	overflow: hidden;
+=======
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+>>>>>>> origin/master
 	z-index: 9999;
 }
 #notify .notify > i {
@@ -56,6 +68,7 @@
 }
 #notify .notify > span.notify-message {
 	display: block;
+<<<<<<< HEAD
 	position: absolute;
 	top: 0;
 	left: 50px;
@@ -64,11 +77,20 @@
 	color: #FFFFFF;
 	width: 290px;
 	height: 100%;
+=======
+	position: relative;
+	float: left;
+	font-size: .9em;
+	color: #FFFFFF;
+	width: 72%;
+	height: 58px;
+>>>>>>> origin/master
 	line-height: 16px;
 	padding: 10px;
 }
 #notify .notify > span.notify-cross {
 	display: block;
+<<<<<<< HEAD
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -90,6 +112,29 @@
 #notify .notify > span.notify-cross:active {
 	color: #FFFFFF;
 	background-color: #2ecc71;
+=======
+	position: relative;
+	float: left;
+	margin-top: 17px;
+	width: 22px;
+	height: 22px;
+	line-height: 20px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 0.9em;
+	color: rgba(255,255,255,0.6);
+	font-weight: bold;
+	cursor: pointer;
+}
+#notify .notify > span.notify-cross > i::before {
+	font-family: "FontAwesome";
+	font-size: 22px;
+}
+#notify .notify > span.notify-cross:hover {
+	color: rgba(255,255,255,0.4);
+>>>>>>> origin/master
 }
 #notify .notify.success,
 #notify .notify.calcul {
@@ -100,7 +145,10 @@
 }
 #notify .notify.fail > i {}
 #notify .notify.fail > span.notify-message {}
+<<<<<<< HEAD
 #notify .notify.fail > span.notify-cross:hover,
 #notify .notify.fail > span.notify-cross:active {
 	background-color: #e74c3c;
 }
+=======
+>>>>>>> origin/master
