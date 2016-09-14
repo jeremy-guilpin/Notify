@@ -1,118 +1,178 @@
+/**
+* Notify
+**/
 #notify *,
 #notify *::before,
 #notify *::after {
 	margin: 0;
 	padding: 0;
+	
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: "Open Sans", sans-serif;
-	font-size: 16px;
 }
 #notify {
 	position: fixed;
-	top: 15px;
-	right: 15px;
-	width: 350px;
+	top: 15px; right: 15px;
+	width: 260px;
+	padding: 5px;
 	height: auto;
 	z-index: 9999;
 }
 #notify .notify {
 	position: relative;
-	width: 350px;
-	min-height: 80px;
-	line-height: 16px;
-	margin: 5px 0;
-	height: 56px;
-	line-height: 56px;
+	width: 250px;
+	min-height: 200px;
+	line-height: 1;
 	margin: 0 0 15px 0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	padding: 15px;
+	
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	box-shadow: 0 0 10px rgba(0,0,0,0.4);
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-	background: none;
+
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+
+	background-color: #FFFFFF;
 	border: 0 none;
-	-webkit-text-shadow: none;
-	-moz-text-shadow: none;
-	text-shadow: none;
 	overflow: hidden;
 	z-index: 9999;
 }
+
+/**
+* Coin Arrondi - Border-radius
+**/
+#notify .notify.border-radius {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/**
+* Title
+**/
+#notify .notify > h1 {
+	position: relative;
+	width: 100%;
+	min-height: 56px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 24px;
+}
+
+/**
+* Message
+**/
+#notify .notify > p {
+	text-align: center;
+	color: #555555;
+	min-height: 20px;
+	font-size: 14px;
+}
+
+/**
+* Symbol
+**/
 #notify .notify > i {
 	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	opacity: 0.3;
-	width: 60px;
-	height: 100%;
-	padding: 0 10px;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #FFFFFF;
+	color: #FFFFFF;
+	line-height: 40px;
+	padding: 15px 0;
+
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 #notify .notify > i::before {
-	position: absolute;
-	top: 50%;
 	font-family: "FontAwesome";
 	font-size: 40px;
-	margin-top: -20px;
 }
-#notify .notify > span.notify-message {
+
+/**
+* Button
+**/
+#notify .notify > button.btn {
 	display: block;
-	position: absolute;
-	top: 0;
-	left: 50px;
-	bottom: 0;
+	margin: 0 auto;
+	padding: 5px 15px;
 	font-size: 12px;
+	text-transform: uppercase;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background-color: #358A2D;
 	color: #FFFFFF;
-	width: 250px;
-	height: 100%;
-	line-height: 16px;
-	padding: 10px;
-	text-align: center;
 }
-#notify .notify > span.notify-cross {
+#notify .notify > button.btn:active,
+#notify .notify > button.btn:focus {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	-moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+/**
+* Cross
+**/
+#notify .notify > .cross {
 	display: block;
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: 40px;
-	height: 100%;
+	top: 0; right: 0;
+	width: 32px;
+	height: 32px;
 	text-align: center;
 	cursor: pointer;
 }
-#notify .notify > span.notify-cross::after {
-	content: 'OK';
-	position: absolute;
-	top: 50%;
-	left: 0;
-	margin-top: -25px;
-	font-size: 14px;
-	width: 100%;
-	height: 30px;
-}
-#notify .notify > span.notify-cross:hover,
-#notify .notify > span.notify-cross:active {
+#notify .notify > .cross::after {
+	display: table-cell;
+	position: relative;
+	content: 'X';
+	font-size: 12px;
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+	font-weight: bold;
 	color: #FFFFFF;
-	background-color: #2ecc71;
 }
-#notify .notify > span.notify-cross > i::before {
-	font-family: "FontAwesome";
-	font-size: 22px;
+#notify .notify > .cross:hover,
+#notify .notify > .cross:active {
+	color: #555555;
 }
-#notify .notify.success,
-#notify .notify.calcul {
-	background-color: #2cc36b;
+
+/**
+* Type Success - Type Fail
+**/
+#notify .notify.success {
+	background-color: #5BC24D;
 }
+#notify .notify.success > h1 {
+	color: #FFFFFF;
+}
+#notify .notify.success > button.btn {
+	background-color: #358A2D;
+	color: #FFFFFF;
+}
+
 #notify .notify.fail {
-	background-color: #c0392b;
+	background-color: #E8594B;
 }
-#notify .notify.fail > i {}
-#notify .notify.fail > span.notify-message {}
-#notify .notify.fail > span.notify-cross:hover,
-#notify .notify.fail > span.notify-cross:active {
-	background-color: #e74c3c;
+#notify .notify.fail > h1,
+#notify .notify.fail > p {
+	color: #FFFFFF;
+}
+#notify .notify.fail > button.btn {
+	background-color: #A7372C;
+	color: #FFFFFF;
 }

@@ -1,8 +1,10 @@
 <html>
   <head>
     <title>Exemple Notify</title>
+    <meta charset="utf-8">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" charset="utf-8">
     <link rel="stylesheet" href="css/notify.css" charset="utf-8">
     <!-- Font -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
@@ -10,19 +12,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.notify.js"></script>
   </head>
   <body>
-    <h1>Notify</h1>
+  
+    <div class="container">
+      
+      <div class="row">
+        
+        <h1>Notify</h1>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        Notify.success('Test Message Flash Success', function() {
-          Notify.fail('Test Message Flash Fail', function() {
-            alert('It\'s Down !');
-          });
-        });
-      });
-    </script>
+      </div>
+      <div class="row">
+
+        <div class="col-md-6">
+          <button class="btn success center-block">Notify Success</button>
+        </div>
+
+        <div class="col-md-6">
+          <button class="btn fail center-block">Notify Fail</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
