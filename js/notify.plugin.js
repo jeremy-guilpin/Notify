@@ -112,10 +112,7 @@
 			el.alert('success', settings);
 		}
 
-		if(
-			settings.info === 'fail' && 
-			settings.message != ''
-		) {
+		if(settings.info === 'fail') {
 			el.alert('fail', settings);
 		}
 
