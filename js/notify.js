@@ -19,6 +19,7 @@ function fadeOut(el, callback) {
 
   if (typeof(callback) === 'function') callback(el);
 }
+
 // Fade in
 function fadeIn(el, display, callback) {
   el.style.opacity = 0;
