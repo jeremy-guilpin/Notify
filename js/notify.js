@@ -61,6 +61,7 @@ var Notify = {
     // Suivant le type d'alerte que l'on souhaite on choisit l'icône FontAwesome
     if (info == 'success') var classes = 'fa-check';
     if (info == 'fail') var classes = 'fa-exclamation-triangle';
+    if (info == 'info') var classes = 'fa-info-circle';
     if (info == 'calcul') var classes = 'fa-calculator';
     // On créé l'icône
     var icon = document.createElement('i');
@@ -146,5 +147,8 @@ var Notify = {
   },
   fail: function(message, callback, time) {
     Notify.alert('fail', message, callback, time);
+  },
+  info: function(message, callback, time) {
+    Notify.alert('info', message, callback, time);
   }
 };
