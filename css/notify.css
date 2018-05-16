@@ -190,3 +190,17 @@
 	background-color: #A7372C;
 	color: #FFFFFF;
 }
+
+#notify .notify.info {
+	background-color: #3498db;
+}
+
+#notify .notify.info>h1,
+#notify .notify.info>p {
+	color: #FFFFFF;
+}
+
+#notify .notify.info>button.btn {
+	background-color: #2980b9;
+	color: #FFFFFF;
+}
